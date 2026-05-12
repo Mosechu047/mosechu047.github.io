@@ -86,3 +86,20 @@ input:focus{
     transition: 0.3s ease;
     margin-top: 8px;
 }
+
+@media (max-width: 768px) {
+    .main{
+        flex-direction: column;
+    }
+    .logo, .card{
+        width: 100%;
+    }
+    .logo{
+        width: 100%;
+        padding: 30px;
+    }
+    .card{
+        width: 100%;
+        padding: 25px;
+    }
+}
