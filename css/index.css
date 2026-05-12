@@ -52,7 +52,7 @@ input:focus{
     box-shadow: 0 0 5px rgba(0,123,255,0.5);
 }
 .btn-primary{
-    background: #007bff;
+    background: #1d4570;
     color: #fff;
     border: none;
     padding: 12px 20px;
@@ -63,7 +63,7 @@ input:focus{
     transition: 0.3s ease;
 }
 .btn-register{
-    background: #e6f1e9;
+    background: #ccc;
     color: #007bff;
     border: none;
     padding: 12px 20px;
@@ -75,9 +75,9 @@ input:focus{
     margin-top: 8px;
 }
 .btn-forgot{
-    background: #fff;
+    background: #ccc;
     color: #007bff;
-    border: 1px solid #007bff;
+    border: none;
     padding: 12px 20px;
     border-radius: 8px;
     cursor: pointer;
