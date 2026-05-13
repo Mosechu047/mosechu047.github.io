@@ -11,6 +11,6 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-const auth = firebase.auth()
+const auth = firebase.auth();
 
-console.log ('connected to firebase')
+console.log('connected to firebase');
