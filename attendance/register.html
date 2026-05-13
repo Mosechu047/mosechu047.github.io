@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+    <div class="main">
+        <div class="logo">
+            <img src="assets/KIbabii-Logo.png" alt="logo" width="100%">
+
+        </div>
+        <div class="card">
+            <h2>Create Account</h2>
+            <form enctype="multipart">
+                <div class="form-group">
+                    <label for="username">Enter First Name:</label>
+                    <input type="text" name="name" id="txtfname" placeholder="Enter your first name">
+                </div>
+                <div class="form-group">
+                    <label for="username">Enter Last Name:</label>
+                    <input type="text" name="name" id="txtlname" placeholder="Enter your last name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Enter Email:</label>
+                    <input type="email" name="email" id="txtemail" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Enter Password:</label>
+                    <input type="password" name="password" id="txtpassword" placeholder="*********">
+                </div>
+                <div class="form-group">
+                    <label for="password">Confirm Password:</label>
+                    <input type="password" name="password" id="txtconpass" placeholder="*********">
+                </div>
+                <div>
+                    <button class="btn-primary" id="submitBtn">Create Account</button>
+                    <button class="btn-register" id="register">
+                        <a href="index.html">Already have an account? Login</a>
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script>
+<script src="js/config.js"></script>
+<script src="js/register.js"></script>
+</body>
+</html>
