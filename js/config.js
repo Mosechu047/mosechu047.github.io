@@ -14,3 +14,14 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 
 console.log('connected to firebase');
+
+function logout() {
+  firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+    window.location.href = "index.html";
+  }).catch((error) => {
+    // An error happened.
+    alert("Error signing out: " + error.message)
+    console.log(error);
+  })
+}
