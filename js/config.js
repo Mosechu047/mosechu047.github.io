@@ -13,7 +13,6 @@ firebase.initializeApp(firebaseConfig);
 
 const auth = firebase.auth();
 
-<<<<<<< HEAD:attendance/js/config.js
 console.log('connected to firebase');
 
 function logout() {
@@ -26,6 +25,4 @@ function logout() {
     console.log(error);
   })
 }
-=======
 console.log('connected to firebase');
->>>>>>> 02d193ff393d83480d1afca735f96fd38c0047f9:js/config.js
