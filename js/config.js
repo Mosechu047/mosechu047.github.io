@@ -21,8 +21,7 @@ function logout() {
     window.location.href = "index.html";
   }).catch((error) => {
     // An error happened.
-    alert("Error signing out: " + error.message)
-    console.log(error);
+    alert("Error signing out: " )
   })
 }
-console.log('connected to firebase');
+

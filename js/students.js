@@ -1,11 +1,11 @@
 let btnAddstudent = document.getElementById('btnAddstudent');
 
     btnAddstudent.addEventListener('click', (event) => {
-    let txtfname = document.getElementById("txtfname").value.trim();
-    let txtlname = document.getElementById("txtlname").value.trim();
-    let txtemail = document.getElementById("txtemail").value.trim();
+    let txtfname = document.getElementById("txtfname").value
+    let txtlname = document.getElementById("txtlname").value
+    let txtemail = document.getElementById("txtemail").value
     
-    if (txtfname == "" || txtlname == "" || txtemail == "" ) {
+    if (txtfname == "" || txtemail == "" ) {
         alert("All fields must be filled");
 
       
@@ -26,8 +26,9 @@ let btnAddstudent = document.getElementById('btnAddstudent');
                     Email: txtemail,
                     Status: status,
                     CreateBy: txtemail,
-                    CreateOn: timenow,
-                    Role: role
+                    Role: role,
+                    CreateOn: timenow
+                    
                 })
                 alert("New student added successfully! Default password is 12345678 and username is email")
             })
@@ -112,6 +113,7 @@ function loadinactivate(){
         })
     })
 }
+
 loadinactivate();
 
 function activateStudent(studentid){
@@ -121,7 +123,8 @@ function activateStudent(studentid){
         Status: "active"
     }).then(() => {
         alert("Student activated successfully");
-    }).catch((error) => {
-        alert("Error activating student: ");
+    })
+    .then((error) => {
+        alert("Error activating student: ")
     })
 }

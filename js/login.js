@@ -15,7 +15,6 @@ let submitBtn = document.getElementById('submitBtn');
                     return firebase.database().ref('userDetails/' + emailid).once('value')
             })
             .then((snapshot) => {
-                if (snapshot.exists()) {
                     const userDetails = snapshot.val();
                     const role = userDetails.Role;
                     const status = userDetails.Status;
@@ -25,6 +24,7 @@ let submitBtn = document.getElementById('submitBtn');
                             window.location.href = "dashboard.html";
                         } else if (role == "Student") {
                             //student
+                            window.location.href = "dashboard.html";
                             alert("Student login successful. Redirecting to student dashboard...");
                         } else {
                             alert("Unknown user role. Please contact support.")
@@ -33,9 +33,7 @@ let submitBtn = document.getElementById('submitBtn');
                     } else {
                         alert("Your account is inactive. Please contact support.")
                     }
-                } else {
-                    alert("No user details found. Please contact support.")
-                }
+               
             })
             .catch((error) =>{
 			alert("Wrong username or password. Please try again.");
