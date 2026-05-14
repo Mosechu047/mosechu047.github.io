@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+    <link rel="icon" type="image/png" href="assets/KIbabii-Logo.png">
+    <link rel="stylesheet" href="css/index.css">
+    
+</head>
+<body>
+    
+    <div class="main">
+        <div class="logo">
+            <img src="assets/KIbabii-Logo.png" alt="logo" width="100%">
+
+        </div>
+        <div class="card">
+            <h2>Welcome to Kibabii University Attendance</h2>
+            
+                <div class="form-group">
+                    <label for="txtusername">Enter Username:</label>
+                    <input type="text" name="name" id="txtusername" placeholder="Enter your name" autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="txtpassword">Enter Password:</label>
+                    <input type="password" name="password" id="txtpassword" placeholder="*********" autocomplete="current-password">
+                </div>
+                <div>
+                    <button type="button" class="btn-primary" id="submitBtn">Login</button>
+                    <button type="button" class="btn-register" id="register">
+                        <a href="register.html">Don't have an account? Register</a>
+                    </button>
+                    <button type="button" class="btn-forgot" id="forgotPassword">
+                        <a href="reset.html">Forgot Password?</a>
+                    </button>
+                </div>
+          
+
+        </div>
+    </div>
+     <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-database.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>
