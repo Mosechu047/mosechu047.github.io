@@ -14,7 +14,7 @@ let submitBtn = document.getElementById('submitBtn');
     }else {
         if (txtpassword == txtconpass) {
             let emailid = txtemail.replace(/\./g, "_dot_").replace(/@/g, "_at_")
-            let status = "active";
+            let status = "inactive";
             let timenow = Date.now();
             let role = "Admin";
             firebase.auth().createUserWithEmailAndPassword(txtemail, txtpassword)

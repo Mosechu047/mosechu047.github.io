@@ -43,3 +43,31 @@ let btnAddstudent = document.getElementById('btnAddstudent');
     
     }
 });
+function loadData(){
+    let tablebody = document.getElementById('tablebody')
+
+    firebase.database().ref("userDetails").on("value",(snapshot)=>{
+        tablebody.innerHTML = "";
+
+        snapshot.forEach((childSnapshot) => {
+            let data = childSnapshot.val()
+            let key = childSnapshot.key
+
+            if(data.Status == "active" && data.Role == "Student"){
+                tablebody.innerHTML += `
+                <tr>
+                    <td>${data.FirstName}</td>
+                    <td>${data.LastName}</td>
+                    <td>${data.Email}</td>
+                    <td>
+                        <button class="btn-approve">Suspend</button>
+                        <button class="btn-reject">Activate</button>
+
+                    </td>
+                </tr>
+          `
+            }
+        })
+    })
+}
+loadData();

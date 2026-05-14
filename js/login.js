@@ -19,7 +19,7 @@ let submitBtn = document.getElementById('submitBtn');
                     const userDetails = snapshot.val();
                     const role = userDetails.Role;
                     const status = userDetails.Status;
-                    if (status == "active") {
+                    if (status == "inactive") {
                         if (role == "Admin") {
                             //admin
                             window.location.href = "dashboard.html";
