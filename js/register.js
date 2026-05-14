@@ -7,7 +7,7 @@ let submitBtn = document.getElementById('submitBtn');
     let txtpassword = document.getElementById("txtpassword").value;
     let txtconpass = document.getElementById("txtconpass").value;
 
-    if (txtfname === "" || txtlname === "" || txtemail === "" || txtpassword === "" || txtconpass === "") {
+    if (txtfname == "" || txtlname == "" || txtemail == "" || txtpassword == "" || txtconpass == "") {
         alert("All fields must be filled");
 
       
@@ -36,7 +36,7 @@ let submitBtn = document.getElementById('submitBtn');
 
             
             .catch((error) => {
-                console.log("Error creating user:", error);
+                console.log( error);
                 alert(error.message);
             });
     } else {

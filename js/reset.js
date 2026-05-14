@@ -11,7 +11,8 @@ resetBtn.addEventListener('click', (event) => {
         
         })
         .catch((error) => {
-            alert("Error: " + error.message);
+            alert(error.message);
             console.log(error);
+            txtemail.value = "";
         });
 });

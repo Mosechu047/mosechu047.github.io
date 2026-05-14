@@ -20,9 +20,7 @@ let btnAddstudent = document.getElementById('btnAddstudent');
             let createdBy = user.email 
             firebase.auth().createUserWithEmailAndPassword(txtemail,autpassword)
                 .then((userCredential) => {
-                    console.log("User created successfully:", userCredential.user.email);
                 firebase.database().ref('userDetails/' + emailid).set({
-    
                     FirstName: txtfname,
                     LastName: txtlname,
                     Email: txtemail,
@@ -32,12 +30,11 @@ let btnAddstudent = document.getElementById('btnAddstudent');
                     Role: role
                 })
                 alert("New student added successfully! Default password is 12345678 and username is email")
-                window.location.href = "index.html";
             })
 
             
             .catch((error) => {
-                console.log("Error creating user:", error);
+                console.log(error);
                 alert(error.message);
             });
     
@@ -78,19 +75,19 @@ function suspendStudent(){
     let confirmSuspend = confirm("Are you sure you want to suspend this student?");
     if (!confirmSuspend) return; 
     firebase.database().ref("userDetails/" + studentid).update({
-        Status: "suspended"
+        Status: "inactive"
     }).then(() => {
         alert("Student suspended successfully");
-    }).catch((error) => {
-        alert("Error suspending student: ")
-
+    })
+    .then((error) => {
+        alert("Error suspending student");
     })
     
 
 }
  
 //acctivate student function
-function loadinactivateSt(){
+function loadinactivate(){
     let tablebody = document.getElementById('tablebody')
 
     firebase.database().ref("userDetails").on("value",(snapshot)=>{
@@ -115,7 +112,7 @@ function loadinactivateSt(){
         })
     })
 }
-loadinactivateSt();
+loadinactivate();
 
 function activateStudent(studentid){
     let confirmActivate = confirm("Are you sure you want to activate this student?");
@@ -125,6 +122,6 @@ function activateStudent(studentid){
     }).then(() => {
         alert("Student activated successfully");
     }).catch((error) => {
-        alert("Error activating student: " + error.message);
+        alert("Error activating student: ");
     })
 }

@@ -19,7 +19,7 @@ let submitBtn = document.getElementById('submitBtn');
                     const userDetails = snapshot.val();
                     const role = userDetails.Role;
                     const status = userDetails.Status;
-                    if (status == "inactive") {
+                    if (status == "active") {
                         if (role == "Admin") {
                             //admin
                             window.location.href = "dashboard.html";
@@ -38,12 +38,12 @@ let submitBtn = document.getElementById('submitBtn');
                 }
             })
             .catch((error) =>{
-			alert(error.messages)
-			console.log(error)
+			alert("Wrong username or password. Please try again.");
+			
            submitBtn.innerHTML = "Log in"
             })
     }
-                
+
 });
     
 
