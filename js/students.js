@@ -60,14 +60,71 @@ function loadData(){
                     <td>${data.LastName}</td>
                     <td>${data.Email}</td>
                     <td>
-                        <button class="btn-approve">Suspend</button>
-                        <button class="btn-reject">Activate</button>
-
+                        <button class="btn-reject" onclick="suspendStudent('${key}')">Suspend</button>
+                       
                     </td>
                 </tr>
           `
             }
+                        
+            }
+        )
+    })
+
+}
+loadData();
+
+function suspendStudent(){
+    let confirmSuspend = confirm("Are you sure you want to suspend this student?");
+    if (!confirmSuspend) return; 
+    firebase.database().ref("userDetails/" + studentid).update({
+        Status: "suspended"
+    }).then(() => {
+        alert("Student suspended successfully");
+    }).catch((error) => {
+        alert("Error suspending student: ")
+
+    })
+    
+
+}
+ 
+//acctivate student function
+function loadinactivateSt(){
+    let tablebody = document.getElementById('tablebody')
+
+    firebase.database().ref("userDetails").on("value",(snapshot)=>{
+        tablebody.innerHTML = "";
+
+        snapshot.forEach((childSnapshot) => {
+            let data = childSnapshot.val()
+            let key = childSnapshot.key
+
+            if(data.Status == "suspended" && data.Role == "Student"){
+                tablebody.innerHTML += `
+                <tr>
+                    <td>${data.FirstName}</td>
+                    <td>${data.LastName}</td>
+                    <td>${data.Email}</td>
+                    <td>
+                        <button class="btn-approve" onclick="activateStudent('${key}')">Activate</button>
+                    </td>
+                </tr>
+                `
+            }
         })
     })
 }
-loadData();
+loadinactivateSt();
+
+function activateStudent(studentid){
+    let confirmActivate = confirm("Are you sure you want to activate this student?");
+    if (!confirmActivate) return;
+    firebase.database().ref("userDetails/" + studentid).update({
+        Status: "active"
+    }).then(() => {
+        alert("Student activated successfully");
+    }).catch((error) => {
+        alert("Error activating student: " + error.message);
+    })
+}
